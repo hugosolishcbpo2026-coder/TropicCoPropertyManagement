@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #050d10;
+  --ink-2: #081418;
+  --emerald: #0a9b5e;
+  --emerald-deep: #0a3326;
+  --gold: #dbac3b;
+  --gold-soft: #e6c463;
+  --coral: #ff5a36;
+  --ivory: #f5f1e8;
+  color-scheme: dark;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+html,
+body {
+  background: var(--ink);
+  color: var(--ivory);
+  font-family: 'Jost', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+body {
+  background:
+    radial-gradient(1200px 800px at 80% -10%, rgba(10, 155, 94, 0.12), transparent 60%),
+    radial-gradient(900px 700px at -10% 90%, rgba(255, 90, 54, 0.08), transparent 60%),
+    var(--ink);
+}
+
+/* Selection */
+::selection {
+  background: rgba(219, 172, 59, 0.35);
+  color: var(--ivory);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050d10;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #0a5e3b, #7d5320);
+  border-radius: 10px;
+}
+
+/* Lenis smooth scroll */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+/* Typography utilities */
+.font-display {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: 'opsz' 144;
+  letter-spacing: -0.015em;
+}
+
+.eyebrow {
+  font-family: 'Jost', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--gold-soft);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #f8efcd 0%, #dbac3b 45%, #a87122 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #c6f0db 0%, #1eb775 50%, #0a5e3b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Glass card */
+.glass {
+  background: linear-gradient(
+    140deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.015) 100%
+  );
+  backdrop-filter: blur(20px) saturate(140%);
+  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 30px 60px -30px rgba(0, 0, 0, 0.6);
+}
+
+.glass-strong {
+  background: linear-gradient(
+    140deg,
+    rgba(10, 30, 24, 0.7) 0%,
+    rgba(5, 13, 16, 0.5) 100%
+  );
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border: 1px solid rgba(230, 196, 99, 0.12);
+}
+
+/* Hairline gold */
+.hairline-gold {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(230, 196, 99, 0.55) 50%,
+    transparent
+  );
+  height: 1px;
+}
+
+/* Shimmer button */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.btn-shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    transparent 35%,
+    rgba(255, 255, 255, 0.25) 50%,
+    transparent 65%
+  );
+  transform: translateX(-100%);
+  transition: transform 0.9s ease;
+  z-index: 1;
+}
+.btn-shimmer:hover::before {
+  transform: translateX(100%);
+}
+
+/* Grain overlay */
+.grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Diamond cut element */
+.diamond-clip {
+  clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+}
+
+/* Hide scrollbar where needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Gold underline link */
+.link-luxe {
+  position: relative;
+  display: inline-block;
+}
+.link-luxe::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(90deg, #dbac3b, #7d5320);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-luxe:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Reveal mask */
+.reveal-mask {
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1.2s cubic-bezier(0.77, 0, 0.18, 1);
+}
+.reveal-mask.in {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Cursor for interactive cinema feel */
+@media (hover: hover) {
+  body {
+    cursor: default;
+  }
+}
+
+/* Reduce motion friendliness */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
