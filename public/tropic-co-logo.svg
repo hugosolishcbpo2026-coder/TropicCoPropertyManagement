@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" fill="none">
+  <defs>
+    <!-- Gold leaf gradient -->
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8efcd"/>
+      <stop offset="45%" stop-color="#dbac3b"/>
+      <stop offset="100%" stop-color="#7d5320"/>
+    </linearGradient>
+    <!-- Emerald gradient for palm fronds -->
+    <linearGradient id="emerald" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1eb775"/>
+      <stop offset="100%" stop-color="#0a3326"/>
+    </linearGradient>
+    <!-- Subtle glow filter -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- === EMBLEM (diamond + palm fusion) === -->
+  <!-- Outer diamond frame -->
+  <path d="M52 6 L92 60 L52 114 L12 60 Z" stroke="url(#gold)" stroke-width="0.9" opacity="0.5"/>
+  
+  <!-- Inner filled diamond -->
+  <path d="M52 20 L82 60 L52 100 L22 60 Z" fill="url(#gold)" filter="url(#glow)"/>
+  
+  <!-- Diamond facet lines -->
+  <path d="M52 20 L52 100" stroke="#050d10" stroke-width="0.6" opacity="0.35"/>
+  <path d="M22 60 L82 60" stroke="#050d10" stroke-width="0.6" opacity="0.35"/>
+  <path d="M36 40 L68 80" stroke="#050d10" stroke-width="0.45" opacity="0.2"/>
+  <path d="M68 40 L36 80" stroke="#050d10" stroke-width="0.45" opacity="0.2"/>
+  
+  <!-- Palm fronds radiating from center -->
+  <g stroke="url(#emerald)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.9">
+    <path d="M52 60 C 44 50, 38 42, 30 34"/>
+    <path d="M52 60 C 60 50, 66 42, 74 34"/>
+    <path d="M52 60 C 46 48, 43 38, 42 24"/>
+    <path d="M52 60 C 58 48, 61 38, 62 24"/>
+    <path d="M52 60 L 52 26"/>
+  </g>
+  
+  <!-- Center jewel -->
+  <circle cx="52" cy="60" r="2.2" fill="#f5f1e8"/>
+  <circle cx="52" cy="60" r="0.9" fill="#dbac3b"/>
+
+  <!-- === WORDMARK === -->
+  <!-- "TROPIC" -->
+  <text x="118" y="62" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="400" letter-spacing="14" fill="#f5f1e8">TROPIC</text>
+  
+  <!-- "CO." in italic gold -->
+  <text x="120" y="90" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-style="italic" font-weight="400" letter-spacing="12" fill="url(#gold)">CO.</text>
+  
+  <!-- Thin gold separator line -->
+  <line x1="118" y1="68" x2="195" y2="68" stroke="url(#gold)" stroke-width="0.5" opacity="0.5"/>
+</svg>

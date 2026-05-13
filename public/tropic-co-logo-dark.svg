@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 240" fill="none">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8efcd"/>
+      <stop offset="45%" stop-color="#dbac3b"/>
+      <stop offset="100%" stop-color="#7d5320"/>
+    </linearGradient>
+    <linearGradient id="emerald" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1eb775"/>
+      <stop offset="100%" stop-color="#0a3326"/>
+    </linearGradient>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#050d10"/>
+      <stop offset="100%" stop-color="#081418"/>
+    </linearGradient>
+    <radialGradient id="ambientGreen" cx="20%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="rgba(10,155,94,0.12)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <radialGradient id="ambientCoral" cx="85%" cy="40%" r="40%">
+      <stop offset="0%" stop-color="rgba(255,90,54,0.08)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="goldGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="600" height="240" rx="12" fill="url(#bg)"/>
+  <rect width="600" height="240" rx="12" fill="url(#ambientGreen)"/>
+  <rect width="600" height="240" rx="12" fill="url(#ambientCoral)"/>
+
+  <!-- Subtle gold line at top -->
+  <line x1="100" y1="0" x2="500" y2="0" stroke="url(#gold)" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- ====== EMBLEM ====== -->
+  <g transform="translate(115, 60)">
+    <!-- Outer diamond frame -->
+    <path d="M52 0 L98 60 L52 120 L6 60 Z" stroke="url(#gold)" stroke-width="0.9" opacity="0.45"/>
+
+    <!-- Inner filled diamond -->
+    <path d="M52 18 L86 60 L52 102 L18 60 Z" fill="url(#gold)" filter="url(#glow)"/>
+
+    <!-- Facet lines -->
+    <path d="M52 18 L52 102" stroke="#050d10" stroke-width="0.6" opacity="0.35"/>
+    <path d="M18 60 L86 60" stroke="#050d10" stroke-width="0.6" opacity="0.35"/>
+    <path d="M34 38 L70 82" stroke="#050d10" stroke-width="0.45" opacity="0.2"/>
+    <path d="M70 38 L34 82" stroke="#050d10" stroke-width="0.45" opacity="0.2"/>
+
+    <!-- Palm fronds -->
+    <g stroke="url(#emerald)" stroke-width="1.6" stroke-linecap="round" fill="none" opacity="0.9">
+      <path d="M52 60 C 44 50, 38 42, 28 32"/>
+      <path d="M52 60 C 60 50, 66 42, 76 32"/>
+      <path d="M52 60 C 46 48, 43 36, 42 22"/>
+      <path d="M52 60 C 58 48, 61 36, 62 22"/>
+      <path d="M52 60 L 52 24"/>
+    </g>
+
+    <!-- Center jewel -->
+    <circle cx="52" cy="60" r="2.2" fill="#f5f1e8"/>
+    <circle cx="52" cy="60" r="0.9" fill="#dbac3b"/>
+  </g>
+
+  <!-- ====== WORDMARK ====== -->
+  <!-- "TROPIC" -->
+  <text x="240" y="122" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="400" letter-spacing="16" fill="#f5f1e8">TROPIC</text>
+
+  <!-- Gold separator -->
+  <line x1="240" y1="132" x2="330" y2="132" stroke="url(#gold)" stroke-width="0.5" opacity="0.45"/>
+
+  <!-- "CO." in italic gold -->
+  <text x="242" y="156" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-style="italic" font-weight="400" letter-spacing="14" fill="url(#gold)">CO.</text>
+
+  <!-- Tagline -->
+  <text x="242" y="184" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="8" font-weight="400" letter-spacing="5" fill="#f5f1e8" opacity="0.35">ELEVATED COASTAL LIVING</text>
+
+  <!-- Decorative corner marks -->
+  <g stroke="url(#gold)" stroke-width="0.5" opacity="0.25">
+    <path d="M24 24 L24 40 M24 24 L40 24"/>
+    <path d="M576 24 L576 40 M576 24 L560 24"/>
+    <path d="M24 216 L24 200 M24 216 L40 216"/>
+    <path d="M576 216 L576 200 M576 216 L560 216"/>
+  </g>
+</svg>
