@@ -8,7 +8,7 @@ import { Phone, Mail, MapPin, Send, CheckCircle2 } from 'lucide-react'
 const CONTACT = {
   // When phone/email arrive, just paste them here.
   // Set value to a real string and `live: true` to make it clickable.
-  phone: { value: '(Coming soon)', live: false },
+  phone: { value: '+1 (602) 848-1866', live: true },
   email: { value: 'Coming soon',   live: false },
   address: {
     line1: '200 Monroe St.',

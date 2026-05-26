@@ -95,9 +95,12 @@ export default function Footer() {
                 <p className="font-mono text-[10px] tracking-ultra uppercase text-ivory/45">
                   Phone
                 </p>
-                <p className="font-display text-lg text-ivory/70 italic">
-                  (Coming soon)
-                </p>
+                <a
+                  href="tel:+16028481866"
+                  className="font-display text-lg text-ivory hover:text-gold-300 transition-colors duration-300"
+                >
+                  +1 (602) 848-1866
+                </a>
               </div>
 
               <div className="mt-4 space-y-1">
